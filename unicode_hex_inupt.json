@@ -1,0 +1,90 @@
+{
+  "title": "Unicode Hex Input",
+  "rules": [
+    {
+      "description": "Switch to UnicodeHexInput by right_alt",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_alt",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_alt",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            {
+              "select_input_source": {
+                "input_source_id": "com.apple.keylayout.UnicodeHexInput"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Send Kana when right_command is pushed alone",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "right_command",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "right_command",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            {
+              "key_code": "japanese_kana"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Switch to UnicodeHexInput by left_command",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_command",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_command",
+              "lazy": true
+            }
+          ],
+          "to_if_alone": [
+            {
+              "select_input_source": {
+                "input_source_id": "com.apple.keylayout.UnicodeHexInput"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
